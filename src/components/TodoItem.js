@@ -1,18 +1,10 @@
 export default function TodoItem(props){
-    
-    const onCompleted = () => {
-        alert('Ya completaste el todo ' + props.text)
-    }
-
-    const onDelete= () => {
-        alert('Ya terminaste el todo ' + props.text)
-    }
 
     return(
         <li className="TodoItem">
             <span 
                 className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}
-                onClick={onCompleted}
+                onClick={props.onComplete}
             >
                 <i className="fa-solid fa-check"></i>
             </span>
@@ -21,7 +13,7 @@ export default function TodoItem(props){
             </p>
             <span 
                 className="Icon Icon-delete"
-                onClick={onDelete}
+                onClick={props.onDelete}
             >
                 <i className="fa-solid fa-trash-can"></i>
             </span>
